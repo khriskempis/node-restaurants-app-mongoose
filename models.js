@@ -36,9 +36,7 @@ restaurantSchema.virtual("addressString").get(function() {
 // this virtual grabs the most recent grade for a restaurant.
 restaurantSchema.virtual("grade").get(function() {
   const gradeObj =
-    this.grades.sort((a, b) => {
-      return b.date - a.date;
-    })[0] || {};
+    this.grades.sort((a, b) => {return b.date - a.date})[0] || {};
   return gradeObj.grade;
 });
 
